@@ -167,12 +167,5 @@ MIT License – free to fork, learn, and build from.
 
 ---
 
-## 🧭 Next Steps
-
-Want help writing:
-
-* `main.go` CLI setup?
-* Raft `node.go` core loop?
-* Basic SQL `parser.go` example?
 
 
