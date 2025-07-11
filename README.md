@@ -16,13 +16,11 @@ It helps you deeply learn:
 
 > ⚠️ This project is intentionally minimal and focused on **learning system design and Go**, not production use.
 
----
-
-## ⚙️ Architecture
-
 ```
 
 ```
+⚙️ Architecture
+
     ┌────────────┐
     │   SQL      │  ← SQL Parser & Planner
     └────┬───────┘
