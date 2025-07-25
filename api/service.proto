@@ -1,0 +1,52 @@
+// This code is not ready yet, in testing, it would be changed.
+
+syntax = "proto3";
+
+// The package name used for the generated Go package
+package api;
+
+// The main gRPC service for the MiniCockroachDB
+service MiniCockroachDB {
+  // Executes a raw SQL-like query (e.g., SELECT, INSERT, etc.)
+  rpc ExecSQL(ExecSQLRequest) returns (ExecSQLResponse);
+
+  // Retrieves a value from the key-value store by key
+  rpc KVGet(KVGetRequest) returns (KVGetResponse);
+
+  // Stores a key-value pair in the key-value store
+  rpc KVPut(KVPutRequest) returns (KVPutResponse);
+}
+
+// Request message for executing SQL
+message ExecSQLRequest {
+  string sql = 1; // The SQL statement to execute
+}
+
+// Response message after SQL execution
+message ExecSQLResponse {
+  string result = 1; // The result/output of the SQL statement
+}
+
+// Request message for KVGet
+message KVGetRequest {
+  string key = 1; // The key to retrieve
+}
+
+// Response message for KVGet
+message KVGetResponse {
+  string value = 1; // The value corresponding to the key
+  bool found = 2;   // True if key exists, false otherwise
+}
+
+// Request message for KVPut
+message KVPutRequest {
+  string key = 1;   // The key to store
+  string value = 2; // The value to associate with the key
+}
+
+// Response message for KVPut
+message KVPutResponse {
+  bool success = 1; // True if the operation was successful
+}
+
+//********Testing************
